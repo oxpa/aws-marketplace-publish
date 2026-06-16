@@ -30,7 +30,7 @@ jobs:
               - 'package.json'
               - 'yarn.lock'
   build:
-    if: ${{ github.actor == 'renovate[bot]' && needs.check.outputs.javascript == 'true' }}
+    if: ${{ needs.check.outputs.javascript == 'true' }}
     runs-on: ubuntu-24.04
     needs: check
     steps:
