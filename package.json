@@ -1,6 +1,6 @@
 {
   "name": "aws-marketplace-publish",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "description": "An action to publish a product to AWS Marketplace",
   "main": "src/main.ts",
