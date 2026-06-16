@@ -3,7 +3,7 @@ import * as aws from '@aws-sdk/client-marketplace-catalog'
 
 async function run(): Promise<void> {
   try {
-    const client = new aws.MarketplaceCatalogClient({region: 'us-east-1'})
+    const Client = new aws.MarketplaceCatalogClient({region: 'us-east-1'})
 
     const productID = core.getInput('product-id', {required: true})
     core.setSecret(productID)
@@ -50,7 +50,7 @@ async function run(): Promise<void> {
       ],
     }
 
-    const result = await client.send(new aws.StartChangeSetCommand(params))
+    const result = await Client.send(new aws.StartChangeSetCommand(params))
     core.info(JSON.stringify(result, null, 2))
 
     if (result.$metadata.httpStatusCode?.toString() !== '200') {
